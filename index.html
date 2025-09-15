@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ditzy Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>✨ Welcome to Ditzy Generator ✨</h1>
+    <p>Gabungan Text Repeater + Sticker Maker + Musik Latar</p>
+  </header>
+
+  <main>
+    <!-- Tabs -->
+    <div class="tabs">
+      <button onclick="setMode('repeat')">🔁 Repeated Text</button>
+      <button onclick="setMode('random')">🎲 Random Text</button>
+      <button onclick="setMode('letters')">🔡 Repeated Letters</button>
+      <button onclick="setMode('crazy')">🤪 Crazy Text</button>
+      <button onclick="setMode('emoji')">😊 Emoticons</button>
+      <button onclick="setMode('blank')">⬜ Blank Text</button>
+      <button onclick="setMode('bold')">🅱️ Bold Letters</button>
+      <button onclick="setMode('shuffle')">🔀 Shuffle Words</button>
+    </div>
+
+    <!-- Generator -->
+    <section class="generator">
+      <textarea id="inputText" placeholder="Tulis teks di sini..."></textarea>
+      <div class="controls">
+        <label for="repeatCount">Jumlah Ulang:</label>
+        <input type="number" id="repeatCount" value="3" min="1" max="100">
+      </div>
+      <button class="generateBtn" onclick="generate()">🚀 Generate</button>
+    </section>
+
+    <!-- Result -->
+    <section class="result">
+      <h2>Hasil:</h2>
+      <div id="output"></div>
+      <button onclick="copyResult()">📋 Copy</button>
+      <button onclick="makeSticker()">🎨 Buat Stiker</button>
+      <a id="downloadSticker" style="display:none">⬇️ Download Stiker</a>
+      <canvas id="stickerCanvas" width="512" height="512" style="display:none"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Ditzy Generator | Made with ❤️</p>
+  </footer>
+
+  <!-- Musik latar -->
+  <audio id="bgMusic" autoplay loop>
+  <source src="Juicy%20Luicy%20-%20Lantas%20(Official%20Lyric%20Video)%20-%20Emotion%20Entertainment.mp3" type="audio/mpeg">
+  </audio>
+  <button id="musicToggle">🔊 Pause Music</button>
+
+  <script src="script.js"></script>
+</body>
+        </html>
